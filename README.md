@@ -1,3 +1,3 @@
 # 2020 SRTP
-test git 66666
-SRTP project
+our SRTP project
+NLP - RNNG
