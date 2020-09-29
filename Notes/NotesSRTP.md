@@ -1,7 +1,5 @@
 #Python深度学习：基于Pytorch
 
-##test
-
 ## Numpy基础
 
 ## Pytorch基础

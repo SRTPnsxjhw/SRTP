@@ -1,3 +1,3 @@
-# 2020 SRTP
-* SRTP project
+# ZJU SRTP
+* our project
 * NLP - RNNG
