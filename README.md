@@ -1,3 +1,3 @@
 # ZJU SRTP
-* our project
+* Our Project
 * NLP - RNNG
