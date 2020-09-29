@@ -1,4 +1,4 @@
-cd pytorch-rnng
+```cd pytorch-rnng
 conda activate py36
 
 (py36) ji@U:~/pytorch-rnng$ python
@@ -7,5 +7,5 @@ conda activate py36
 0.2.0_0
 
 (py36) ji@U:~/pytorch-rnng$ pytest
-
+```
 
