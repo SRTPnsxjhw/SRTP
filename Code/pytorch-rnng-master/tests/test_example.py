@@ -52,6 +52,7 @@ def test_make_example_from_gen_oracle():
         REDUCE,
         REDUCE,
     ]
+    # TODO reduce means?
     pos_tags = 'NNP VBZ NNP'.split()
     words = 'John loves Mary'.split()
     oracle = GenOracle(actions, pos_tags)
@@ -69,3 +70,4 @@ def test_make_example_from_gen_oracle():
     assert example.nonterms == [get_nonterm(a) for a in actions if is_nt(a)]
     assert example.pos_tags == pos_tags
     assert example.words == words
+    # same as actions.py, 对给出的example实例进行断言测试，将输入的文本进行分类标记

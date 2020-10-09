@@ -5,7 +5,7 @@ from rnng.actions import GEN, NT, REDUCE, SHIFT, get_nonterm, get_word, is_gen, 
 
 def test_reduce_action():
     assert REDUCE == 'REDUCE'
-# assert断言，确定执行条件即当为REDUCE（str）时执行
+
 
 def test_shift_action():
     assert SHIFT == 'SHIFT'
@@ -17,7 +17,7 @@ def test_NT():
 
 def test_GEN():
     assert GEN('John') == 'GEN(John)'
-# action.py中的返回值问题
+
 
 def test_get_nonterm():
     action = NT('NP')
