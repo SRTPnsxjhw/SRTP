@@ -6,11 +6,17 @@ from nltk.tree import Tree
 from rnng.actions import GEN, NT, REDUCE, SHIFT, get_nonterm, get_word, is_gen, is_nt
 from rnng.typing import Action, POSTag, Word
 
+'''
+oracle的中文术语为【结果参照物】
+test oracle的中文术语为【测试结果参照物】
+意为：在测试时确定与实际结果进行比较的预期结果的源。
+它可能包括现有系统（作基准）、用户手册、或个人的专业知识等，但不是代码。
+'''
 
 class Oracle(metaclass=abc.ABCMeta):
     @property
     @abc.abstractmethod
-    def actions(self) -> List[Action]:
+    def actions(self) -> List[Action]:  # 返回List，其中内容为str类型的Action
         pass
 
     @property
@@ -23,7 +29,7 @@ class Oracle(metaclass=abc.ABCMeta):
     def words(self) -> List[Word]:
         pass
 
-    def to_tree(self) -> Tree:
+    def to_tree(self) -> Tree:  # actions -> parse tree
         stack = []
         pos_tags = list(reversed(self.pos_tags))
         words = list(reversed(self.words))
@@ -58,7 +64,7 @@ class Oracle(metaclass=abc.ABCMeta):
         pass
 
     @classmethod
-    def get_actions(cls, tree: Tree) -> List[Action]:
+    def get_actions(cls, tree: Tree) -> List[Action]:   # parse tree -> actions  
         if len(tree) == 1 and not isinstance(tree[0], Tree):
             return [cls.get_action_at_pos_node(tree)]
 
@@ -103,7 +109,7 @@ class DiscOracle(Oracle):
         return cls(actions, list(pos_tags), list(words))
 
     @classmethod
-    def get_action_at_pos_node(cls, pos_node: Tree) -> Action:
+    def get_action_at_pos_node(cls, pos_node: Tree) -> Action:  # pos_node(position) -> actions 
         if len(pos_node) != 1 or isinstance(pos_node[0], Tree):
             raise ValueError('input is not a valid POS node')
         return SHIFT
@@ -141,3 +147,4 @@ class GenOracle(Oracle):
         if len(pos_node) != 1 or isinstance(pos_node[0], Tree):
             raise ValueError('input is not a valid POS node')
         return GEN(pos_node[0])
+        
