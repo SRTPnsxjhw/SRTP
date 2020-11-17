@@ -1,4 +1,4 @@
-import textwrap         # textwrap模块
+import textwrap             # textwrap模块
 
 from nltk.tree import Tree
 import pytest

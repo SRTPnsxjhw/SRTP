@@ -5,7 +5,7 @@ from rnng.actions import GEN, NT, REDUCE, SHIFT
 from rnng.oracle import DiscOracle, GenOracle
 
 
-class TestDiscOracle:
+class TestDiscOracle:   # 测试判别模型参照物？
     def test_init(self):
         actions = [NT('S'), SHIFT]
         pos_tags = ['NNP']
@@ -81,7 +81,7 @@ class TestDiscOracle:
         assert str(oracle.to_tree()) == s
 
 
-class TestGenOracle:
+class TestGenOracle:   # 测试生成模型参照物
     def test_init_with_unequal_gen_count_and_number_of_pos_tags(self):
         actions = [NT('S')]
         pos_tags = ['NNP']

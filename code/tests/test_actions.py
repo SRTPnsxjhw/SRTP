@@ -2,6 +2,8 @@ import pytest
 
 from rnng.actions import GEN, NT, REDUCE, SHIFT, get_nonterm, get_word, is_gen, is_nt
 
+# 验证actions
+
 
 def test_reduce_action():
     assert REDUCE == 'REDUCE'

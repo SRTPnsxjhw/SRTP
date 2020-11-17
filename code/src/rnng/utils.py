@@ -1,7 +1,7 @@
 from nltk.tree import Tree
 
 
-def add_dummy_pos(tree):
+def add_dummy_pos(tree):    # add_dummy_pos 添加虚拟位置
     if not isinstance(tree, Tree):
         return Tree('XX', [tree])
     return Tree(tree.label(), [add_dummy_pos(t) for t in tree])
@@ -14,7 +14,7 @@ def get_evalb_f1(evalb_output):
     return float(line.split()[-1])
 
 
-def id2parsetree(tree, id2nonterm, id2word):
+def id2parsetree(tree, id2nonterm, id2word):    # id2parsetree 通过位序生成树
     if not isinstance(tree, Tree):
         return id2word[tree]
     children = [id2parsetree(t, id2nonterm, id2word) for t in tree]

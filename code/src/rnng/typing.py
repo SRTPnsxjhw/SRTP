@@ -6,3 +6,5 @@ WordId = int
 POSId = int
 NTId = int
 ActionId = int
+
+# 类型
