@@ -1,53 +1,42 @@
-ROOT：要处理文本的语句
-IP：简单从句
-NP：名词短语
-VP：动词短语
-PU：断句符，通常是句号、问号、感叹号等标点符号
-LCP：方位词短语
-PP：介词短语
-CP：由‘的’构成的表示修饰性关系的短语
-DNP：由‘的’构成的表示所属关系的短语
-ADVP：副词短语
-ADJP：形容词短语
-DP：限定词短语
-QP：量词短语
-NN：常用名词
-NR：固有名词：表示仅适用于该项事物的名词，含地名，人名，国名，书名，团体名称以及一事件的名称等。
-NT：时间名词
-PN：代词
-VV：动词
-VC：是
-CC：表示连词
-VE：有
-VA：表语形容词
-AS：内容标记（如：了）
-VRD：动补复合词
-CD: 表示基数词
-DT: determiner 表示限定词
-EX: existential there 存在句
-FW: foreign word 外来词
-IN: preposition or conjunction, subordinating 介词或从属连词
-JJ: adjective or numeral, ordinal 形容词或序数词
-JJR: adjective, comparative 形容词比较级
-JJS: adjective, superlative 形容词最高级
-LS: list item marker 列表标识
-MD: modal auxiliary 情态助动词
-PDT: pre-determiner 前位限定词
-POS: genitive marker 所有格标记
-PRP: pronoun, personal 人称代词
-RB: adverb 副词
-RBR: adverb, comparative 副词比较级
-RBS: adverb, superlative 副词最高级
-RP: particle 小品词 
-SYM: symbol 符号
-TO:”to” as preposition or infinitive marker 作为介词或不定式标记 
-WDT: WH-determiner WH限定词
-WP: WH-pronoun WH代词
-WP$: WH-pronoun, possessive WH所有格代词
-WRB:Wh-adverb WH副词
-
-来自 <https://blog.csdn.net/ld326/article/details/80762629> 
-
+Alphabetical list of part-of-speech tags used in the Penn Treebank Project:
+Number Tag Description
+1.	CC	Coordinating conjunction
+2.	CD	Cardinal number
+3.	DT	Determiner
+4.	EX	Existential there
+5.	FW	Foreign word
+6.	IN	Preposition or subordinating conjunction
+7.	JJ	Adjective
+8.	JJR	Adjective, comparative
+9.	JJS	Adjective, superlative
+10.	LS	List item marker
+11.	MD	Modal
+12.	NN	Noun, singular or mass
+13.	NNS	Noun, plural
+14.	NNP	Proper noun, singular
+15.	NNPS	Proper noun, plural
+16.	PDT	Predeterminer
+17.	POS	Possessive ending
+18.	PRP	Personal pronoun
+19.	PRP$	Possessive pronoun
+20.	RB	Adverb
+21.	RBR	Adverb, comparative
+22.	RBS	Adverb, superlative
+23.	RP	Particle
+24.	SYM	Symbol
+25.	TO	to
+26.	UH	Interjection
+27.	VB	Verb, base form
+28.	VBD	Verb, past tense
+29.	VBG	Verb, gerund or present participle
+30.	VBN	Verb, past participle
+31.	VBP	Verb, non-3rd person singular present
+32.	VBZ	Verb, 3rd person singular present
+33.	WDT	Wh-determiner
+34.	WP	Wh-pronoun
+35.	WP$	Possessive wh-pronoun
+36.	WRB	Wh-adverb
+https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html
 
 Pretrained Generative Model
 As the generative model takes a while to train, a pretrained model is available here: (version as of Apr 16 2018)

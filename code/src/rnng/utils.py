@@ -1,7 +1,7 @@
 from nltk.tree import Tree
 
 
-def add_dummy_pos(tree):    # add_dummy_pos 添加虚拟位置
+def add_dummy_pos(tree):    # add_dummy_pos 添加虚拟词性？
     if not isinstance(tree, Tree):
         return Tree('XX', [tree])
     return Tree(tree.label(), [add_dummy_pos(t) for t in tree])

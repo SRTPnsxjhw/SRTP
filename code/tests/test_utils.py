@@ -20,7 +20,7 @@ def test_id2parsetree():    # id2parsetree 通过位序生成树
     assert str(id2parsetree(tree, id2nonterm, id2word)) == expected
 
 
-def test_add_dummy_pos():   # add_dummy_pos 添加虚拟位置
+def test_add_dummy_pos():   # add_dummy_pos 添加虚拟词性？
     s = '(S (NP John) (VP loves (NP Mary)))'
     expected = '(S (NP (XX John)) (VP (XX loves) (NP (XX Mary))))'
     tree = Tree.fromstring(s)
