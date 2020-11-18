@@ -29,7 +29,7 @@ class Oracle(metaclass=abc.ABCMeta):
     def words(self) -> List[Word]:
         pass
 
-    def to_tree(self) -> Tree:  # actions -> parse tree
+    def to_tree(self) -> Tree:  # actions + pos_tags + words -> parse tree
         stack = []
         pos_tags = list(reversed(self.pos_tags))
         words = list(reversed(self.words))
@@ -109,7 +109,7 @@ class DiscOracle(Oracle):
         return cls(actions, list(pos_tags), list(words))
 
     @classmethod
-    def get_action_at_pos_node(cls, pos_node: Tree) -> Action:  # pos_node(position) -> actions 
+    def get_action_at_pos_node(cls, pos_node: Tree) -> Action:  # pos_node -> actions 
         if len(pos_node) != 1 or isinstance(pos_node[0], Tree):
             raise ValueError('input is not a valid POS node')
         return SHIFT

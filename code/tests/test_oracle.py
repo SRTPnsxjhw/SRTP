@@ -33,7 +33,7 @@ class TestDiscOracle:   # 测试判别模型参照物？
             DiscOracle(actions, pos_tags, words)
         assert 'number of POS tags should match number of words' in str(excinfo.value)
 
-    def test_from_tree(self):
+    def test_from_tree(self):   # parse tree -> actions + pos_tags + words  
         s = '(S (NP (NNP John)) (VP (VBZ loves) (NP (NNP Mary))))'
         expected_actions = [
             NT('S'),
@@ -58,7 +58,7 @@ class TestDiscOracle:   # 测试判别模型参照物？
         assert oracle.pos_tags == expected_pos_tags
         assert oracle.words == expected_words
 
-    def test_to_tree(self):
+    def test_to_tree(self):    # actions + pos_tags + words -> parse tree
         s = '(S (NP (NNP John)) (VP (VBZ loves) (NP (NNP Mary))))'
         actions = [
             NT('S'),
@@ -89,7 +89,7 @@ class TestGenOracle:   # 测试生成模型参照物
             GenOracle(actions, pos_tags)
         assert 'number of POS tags should match number of GEN actions' in str(excinfo.value)
 
-    def test_from_tree(self):
+    def test_from_tree(self):   # parse tree -> actions + pos_tags + words
         s = '(S (NP (NNP John)) (VP (VBZ loves) (NP (NNP Mary))))'
         expected_actions = [
             NT('S'),
@@ -114,7 +114,7 @@ class TestGenOracle:   # 测试生成模型参照物
         assert oracle.words == expected_words
         assert oracle.pos_tags == expected_pos_tags
 
-    def test_to_tree(self):
+    def test_to_tree(self):     # actions + pos_tags -> parse tree
         s = '(S (NP (NNP John)) (VP (VBZ loves) (NP (NNP Mary))))'
         actions = [
             NT('S'),
