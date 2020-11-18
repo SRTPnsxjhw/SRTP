@@ -11,3 +11,4 @@ def make_example(oracle: Oracle, fields: List[Tuple[str, Field]]):
     return Example.fromlist(
         [oracle.actions, nonterms, oracle.pos_tags, oracle.words], fields
     )
+    
