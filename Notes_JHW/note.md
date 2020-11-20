@@ -1,3 +1,6 @@
+TODO: train / model  iterator
+
+
 Alphabetical list of part-of-speech tags used in the Penn Treebank Project:
 Number Tag Description
 1.	CC	Coordinating conjunction
