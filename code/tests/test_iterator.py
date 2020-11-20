@@ -26,7 +26,7 @@ class TestSimpleIterator(object):   # 测试迭代器
             The string is a field name, and the Field is the associated field.
     '''
     examples = [    # 从原始数据构造出Example的列表
-        Example.fromlist(['John loves Mary'], [('text', TEXT)]),    # Example.fromlist( 句子, fields ),
+        Example.fromlist(['John loves Mary'], [('text', TEXT)]),  # Example.fromlist( 句子, fields ),
         Example.fromlist(['Mary cries'], [('text', TEXT)]),
     ]
     dataset = Dataset(examples, [('text', TEXT)])   # Example列表构造DataSet
@@ -56,10 +56,10 @@ class TestSimpleIterator(object):   # 测试迭代器
     def test_next(self):
         iterator = self.make_iterator()      
         # 使用iter()函数把list，dict，str等Iterable转换为Iterator
-        sample = next(iter(iterator))       # 存疑
+        sample = next(iter(iterator))       #TODO
 
         assert isinstance(sample.text, Variable)    # 是否为Variable类
-        assert sample.text.size(1) == 1             # 存疑
+        assert sample.text.size(1) == 1             #TODO
 
 
 '''

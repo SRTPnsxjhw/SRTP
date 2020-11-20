@@ -14,13 +14,13 @@ class ActionField(Field):
         super().__init__(unk_token=unk_token, pad_token=pad_token, **kwargs)
         self.nonterm_field = nonterm_field
 
-    def build_vocab(self) -> None:
+    def build_vocab(self) -> None: # 建立词典
         specials = [REDUCE, SHIFT]
         for nonterm in self.nonterm_field.vocab.stoi:
             specials.append(NT(nonterm))
         self.vocab = Vocab(Counter(), specials=specials)
 
-    def numericalize(self, arr, **kwargs) -> Variable:
+    def numericalize(self, arr, **kwargs) -> Variable:   # 把文本数据数值化
         arr = [[self._actionstr2id(s) for s in ex] for ex in arr]
         old_use_vocab = self.use_vocab  # type: ignore
         self.use_vocab = False
