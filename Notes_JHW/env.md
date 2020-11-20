@@ -8,4 +8,4 @@ conda activate py36
 
 (py36) ji@U:~/pytorch-rnng$ pytest
 ```
-
+typing.py修改为typing1.py 解决typing模块报错问题
