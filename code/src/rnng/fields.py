@@ -29,8 +29,8 @@ class ActionField(Field):
         return arr
 
     def _actionstr2id(self, s: str) -> int:
-        if s in self.vocab.stoi:
-            return self.vocab.stoi[s]
+        if s in self.vocab.stoi:        # stoi返回每一个单词与其对应的下标
+            return self.vocab.stoi[s]   # 返回下标
         # must be an unknown NT action, so we map it to NT(<unk>)
         action = NT(self.nonterm_field.unk_token)
         assert action in self.vocab.stoi

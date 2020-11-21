@@ -1,4 +1,6 @@
-TODO: train / model  iterator
+done: actions(t) utils(t)
+fixme: example fields iterator + (t) 
+todo: model / train
 
 
 Alphabetical list of part-of-speech tags used in the Penn Treebank Project:
@@ -40,6 +42,8 @@ Number Tag Description
 35.	WP$	Possessive wh-pronoun
 36.	WRB	Wh-adverb
 https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html
+
+
 
 Pretrained Generative Model
 As the generative model takes a while to train, a pretrained model is available here: (version as of Apr 16 2018)

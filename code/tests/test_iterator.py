@@ -5,9 +5,8 @@ from torchtext.data import Dataset, Example, Field
 '''
 torchtext.data.Example :    用来表示一个样本，数据+标签
 torchtext.data.Datasets:    数据集类，__getitem__ 返回 Example实例
-torchtext.data.Field :      用来定义字段的处理方法（文本字段，标签字段）比如指定的分词方法，是否转成小写，起始与结束字符，补全字符以及词典等等
-                            1.创建 Example时的 预处理 2.batch 时的一些处理操作。
-                            Field文档https://github.com/pytorch/text/blob/c839a7934930819be7e240ea972e4d600966afdc/torchtext/data/field.py#L61
+torchtext.data.Field :      用来定义字段的处理方法（文本字段，标签字段）。比如指定的分词方法，
+                            是否转成小写，起始与结束字符，补全字符以及词典等等
 torchtext.data.Iterator:    迭代器，用来生成 batch
                             返回模型所需要的处理后的数据
 '''
