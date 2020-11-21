@@ -21,7 +21,7 @@ def is_gen(action: Action) -> bool:
     return action.startswith('GEN')
 
 
-def get_nonterm(action: Action) -> NTLabel:     # get非术语部分？
+def get_nonterm(action: Action) -> NTLabel:     # get非术语部分？ 非终止符？
     if action.startswith('NT(') and action.endswith(')'):
         return action[3:-1]
     raise ValueError(f'action {action} is not an NT action')
