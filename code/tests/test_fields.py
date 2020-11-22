@@ -18,7 +18,7 @@ class TestActionField(object):
         assert field.unk_token is None
         assert field.pad_token is None
 
-    def test_build_vocab(self):     #  建立词典   #TODO:理解
+    def test_build_vocab(self):     #  建立词典    
         field = self.make_action_field()
         nonterms = 'S NP VP'.split()
         field.nonterm_field.build_vocab([nonterms])
@@ -33,7 +33,7 @@ class TestActionField(object):
             assert field.vocab.stoi[action] == nid + 2
         assert NT(field.nonterm_field.unk_token) in field.vocab.stoi
 
-    def test_numericalize(self):        #   把文本数据数值化   #TODO:理解
+    def test_numericalize(self):        #   把文本数据数值化   
         field = self.make_action_field()
         nonterms = 'S NP VP'.split()
         field.nonterm_field.build_vocab([nonterms])

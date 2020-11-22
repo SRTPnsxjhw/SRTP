@@ -1,7 +1,7 @@
-done: actions(t) utils(t)
-fixme: example fields iterator + (t) 
-todo: model / train
-
+DONE: actions(t) utils(t)
+TAG: example fields iterator + (t) 
+WARN: model / train
+TODO: evalb executable file / params file
 
 Alphabetical list of part-of-speech tags used in the Penn Treebank Project:
 Number Tag Description
