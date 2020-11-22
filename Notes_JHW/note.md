@@ -1,6 +1,5 @@
 DONE: actions(t) utils(t)
-TAG: example fields iterator + (t) 
-WARN: model / train
+TODO: example fields iterator + (t)  and   model / train
 TODO: evalb executable file / params file
 
 Alphabetical list of part-of-speech tags used in the Penn Treebank Project:
