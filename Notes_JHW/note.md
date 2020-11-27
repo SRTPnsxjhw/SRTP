@@ -2,6 +2,10 @@ DONE: actions(t) utils(t)
 TODO: example fields iterator + (t)  and   model / train
 TODO: evalb executable file / params file
 
+  train为训练语料，用于模型训练；
+  dev为开发集，用于模型参数调优；
+  test用于测试
+  
 Alphabetical list of part-of-speech tags used in the Penn Treebank Project:
 Number Tag Description
 1.	CC	Coordinating conjunction
