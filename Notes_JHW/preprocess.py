@@ -14,11 +14,11 @@ def convert_to_one_line(file):
             line = line.strip()
             if line:
                 sen += '{} '.format(line)
-        if sen:
-            sen = sen[1:-2].strip() + '\n'
-            sens.append(sen)
+    if sen:
+        sen = sen[1:-2].strip() + '\n'
+        sens.append(sen)
 
-        return ''.join(sens)[:-1]
+    return ''.join(sens)[:-1]
 
 def convert(wsj):
     dirs_map = {
