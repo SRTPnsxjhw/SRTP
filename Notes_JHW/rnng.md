@@ -39,3 +39,30 @@ add_subdirectory(nt-parser)
 
 
 python2 preprocess.py /home/ji/code/rnng/wsj
+
+python2 get_oracle.py data/train.all data/train.all > data/train.oracle 
+python2 get_oracle.py data/train.all data/dev.all > data/dev.oracle 
+python2 get_oracle.py data/train.all data/test.all > data/test.oracle
+python2 get_oracle_gen.py data/train.all data/train.all > data/train_gen.oracle 
+python2 get_oracle_gen.py data/train.all data/dev.all > data/dev_gen.oracle
+python2 get_oracle_gen.py data/train.all data/test.all > data/test_gen.oracle
+
+
+python2 preprocess.py /home/ji/code/brown-cluster/train.oracle  > /home/ji/code/brown-cluster/train.txt
+
+
+./wcluster --text train.txt --c 156
+
+
+python2 preprocess.py dev.oracle  > dev.stem
+python2 preprocess.py test.oracle  > test.stem
+ 
+
+./build/nt-parser/nt-parser -x -T data/train.oracle -d data/dev.oracle -C data/dev.stem -P -t --input_dim 128 --lstm_input_dim 128 --hidden_dim 128 -D 0.2
+
+
+TODO:
+修改 rnng下的 get_oracle.py和 get_oracle_gen.py两个代码。因为数据中 nonterminal tokens种类较多，需要做一个 stemming的工作，将类似“NP-SBJ”这样的 nonterminal token -后部分去掉，变成“NP”。修改后的代码为get_oracle_stem.py和 get_oracle_gen_stem.py
+
+all ->  oracle ->  stem 
+gen.py

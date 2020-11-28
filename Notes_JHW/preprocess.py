@@ -60,4 +60,4 @@ if __name__ == '__main__':
     if len(sys.argv) < 2:
         print "please input wsj dir!"
         exit()
-    convert(sys.argv[1])
+    extract_stemmed_trees(sys.argv[1])
