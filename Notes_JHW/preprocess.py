@@ -1,9 +1,8 @@
 import os
 import sys
 
-
 def convert_to_one_line(file):
-    lines = open(file, 'r').read().split('\n')
+    lines = open(file,'r').read().split('\n')
     sens = []
     sen = ""
     for line in lines:
@@ -18,25 +17,24 @@ def convert_to_one_line(file):
         if sen:
             sen = sen[1:-2].strip() + '\n'
             sens.append(sen)
-    return ''.join(sens)[:-1]
 
+        return ''.join(sens)[:-1]
 
 def convert(wsj):
     dirs_map = {
         "train": ['02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18',
-                    '19', '20', '21'],
+                  '19', '20', '21'],
         "dev": ['24'],
         "test": ['23']
     }
     for dataset in ['train', 'dev', 'test']:
         dirs = dirs_map[dataset]
-        with open("{}.all".format(dataset), 'a') as f:
+        with open("{}.all".format(dataset),'a') as f:
             for dir in dirs:
-            dir = "{}/{}".format(wsj, dir)
-            files = sorted(os.listdir(dir))
-            for file in files:
-                f.write(convert_to_one_line("{}/{}".format(dir, file)) + '\n')
-
+                dir = "{}/{}".format(wsj, dir)
+                files = sorted(os.listdir(dir))
+                for file in files:
+                    f.write(convert_to_one_line("{}/{}".format(dir, file)) + '\n')
 
 def extract_unk_lines(file):
     """
@@ -49,7 +47,6 @@ def extract_unk_lines(file):
         items = line.split('\n')
         print items[4]
 
-
 def extract_stemmed_trees(file):
     """
     extract the lines of stemmed trees in *.oracle to *.stem, which will be used in evaluation
@@ -58,7 +55,6 @@ def extract_stemmed_trees(file):
     for line in lines:
         if len(line) > 1 and line[0] == '#':
             print line[2:]
-
 
 if __name__ == '__main__':
     if len(sys.argv) < 2:

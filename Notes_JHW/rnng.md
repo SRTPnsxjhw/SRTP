@@ -1,5 +1,6 @@
-g++ -o test test.cc -I /home/ji/code/boost_1_61_0 -L /home/ji/code/boost_1_61_0/stage/lib -no-pie
+/home/ji/code/rnng
 
+g++ -o test test.cc -I /home/ji/code/boost_1_61_0 -L /home/ji/code/boost_1_61_0/stage/lib -no-pie
 
 SET (BOOST_ROOT "/home/ji/code/boost_1_61_0") 
 SET (Boost_INCLUDE_DIR "/home/ji/code/boost_1_61_0") 
@@ -35,3 +36,6 @@ add_subdirectory(cnn/cnn)
 add_subdirectory(nt-parser)
 # add_subdirectory(cnn/examples)
 ```
+
+
+python2 preprocess.py /home/ji/code/rnng/wsj
