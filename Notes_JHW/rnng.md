@@ -187,8 +187,13 @@ REDUCE
 # Train Gen
 ./build/nt-parser/nt-parser-gen -x -T data/train_gen.oracle -d data/dev_gen.oracle -c data/word_clusters.txt -t --input_dim 256 --lstm_input_dim 256 --hidden_dim 256 -D 0.3
 
-# Decoding Gen 
+## Decoding Gen 
 
+## 从discriminative model 中采样
+./build/nt-parser/nt-parser -x -T data/train.oracle -d data/dev.oracle -C data/test.stem -m ntparse_pos_0_2_128_128_16_128-pid62654.params -P -p data/test.oracle --input_dim 128 --lstm_input_dim 128 --hidden_dim 128 -D 0.2 -s 100 -a 0.8 > test-samples.props
+
+ 
+## 去除test-samples.props 中每一行的多余部分
 utils/cut-corpus.pl 3 test-samples.props > test-samples.trees
  
 ## 从生成模型中获得联合概率
