@@ -210,3 +210,8 @@ utils/add-fake-preterms-for-eval.pl rescored.trees > rescored.preterm.trees
 utils/replace-unks-in-trees.pl data/test.oracle rescored.preterm.trees > hyp.trees
 python2 utils/remove_dev_unk.py data/test.stem hyp.trees > hyp_final.trees 
 EVALB/evalb -p EVALB/COLLINS.prm data/test.stem hyp_final.trees > parsing_result.txt
+
+## 参数
+llx.txt 文件中的最后几行会给出language model 中边缘概率p(x)的perplexity， 大
+约可以达到 88.66。parsing_result.txt 中给出了generative model 的准确率，F1 值大约为
+92.88。
