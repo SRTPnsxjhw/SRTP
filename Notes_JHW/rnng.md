@@ -196,7 +196,7 @@ REDUCE
 ## 去除test-samples.props 中每一行的多余部分
 utils/cut-corpus.pl 3 test-samples.props > test-samples.trees
  
-## 从生成模型中获得联合概率
+## 从生成模型中获得联合概率 6h左右
 ./build/nt-parser/nt-parser-gen -x -T data/train_gen.oracle --clusters data/word_clusters.txt --input_dim 256 --lstm_input_dim 256 --hidden_dim 256 -p test-samples.trees -m ntparse_gen_D0.3_2_256_256_16_256-pid3260.params > test-samples.likelihoods
  
 ## 获得边缘概率
@@ -215,3 +215,5 @@ EVALB/evalb -p EVALB/COLLINS.prm data/test.stem hyp_final.trees > parsing_result
 llx.txt 文件中的最后几行会给出language model 中边缘概率p(x)的perplexity， 大
 约可以达到 88.66。parsing_result.txt 中给出了generative model 的准确率，F1 值大约为
 92.88。
+
+
