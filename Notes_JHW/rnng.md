@@ -118,77 +118,14 @@ build/nt-parser/nt-parser --cnn-mem 1700 -x -T [training_oracle_file] -p [test_o
 ## Test input 
 ```
 0 ||| -3.68213 ||| (S (NP-SBJ-1 (NP (XX The) (XX economy) (XX 's)) (XX temperature)) (VP (XX will) (VP (XX be) (VP (XX taken) (NP (XX *-1)) (PP-CLR (XX from) (NP (XX several) (XX UNK-LC) (XX points))) (NP-TMP (NP (XX this) (XX week)) (XX ,) (PP (XX with) (NP (NP (XX readings)) (PP (XX on) (NP (XX trade) (XX ,) (XX output) (XX ,) (XX housing) (XX and) (XX inflation))))))))) (XX .))
-0 ||| -0.522691 ||| (S (NP-SBJ-1 (NP (XX The) (XX economy) (XX 's)) (XX temperature)) (VP (XX will) (VP (XX be) (VP (XX taken) (NP (XX *-1)) (PP-CLR (XX from) (NP (XX several) (XX UNK-LC) (XX points))) (NP-TMP (XX this) (XX week)) (XX ,) (PP (XX with) (NP (NP (XX readings)) (PP (XX on) (NP (XX trade) (XX ,) (XX output) (XX ,) (XX housing) (XX and) (XX inflation)))))))) (XX .))
+0 ||| -0.522691||| (S (NP-SBJ-1 (NP (XX The) (XX economy) (XX 's)) (XX temperature)) (VP (XX will) (VP (XX be) (VP (XX taken) (NP (XX *-1)) (PP-CLR (XX from) (NP (XX several) (XX UNK-LC) (XX points))) (NP-TMP (XX this) (XX week)) (XX ,) (PP (XX with) (NP (NP (XX readings)) (PP (XX on) (NP (XX trade) (XX ,) (XX output) (XX ,) (XX housing) (XX and) (XX inflation)))))))) (XX .))
 
 # (S (NP-SBJ-1 (NP (DT The) (NN economy) (POS 's) ) (NN temperature) ) (VP (MD will) (VP (VB be) (VP (VBN taken) (NP (-NONE- *-1) ) (PP-CLR (IN from) (NP (JJ several) (NN vantage) (NNS points) )) (NP-TMP (DT this) (NN week) ) (, ,) (PP (IN with) (NP (NP (NNS readings) ) (PP (IN on) (NP (NP (NN trade) ) (, ,) (NP (NN output) ) (, ,) (NP (NN housing) ) (CC and) (NP (NN inflation) )))))))) (. .) )
 DT NN POS NN MD VB VBN -NONE- IN JJ NN NNS DT NN , IN NNS IN NN , NN , NN CC NN .
 The economy 's temperature will be taken *-1 from several vantage points this week , with readings on trade , output , housing and inflation .
 the economy 's temperature will be taken *-1 from several vantage points this week , with readings on trade , output , housing and inflation .
 The economy 's temperature will be taken *-1 from several UNK-LC points this week , with readings on trade , output , housing and inflation .
-NT(S)
-NT(NP-SBJ-1)
-NT(NP)
-SHIFT
-SHIFT
-SHIFT
-REDUCE
-SHIFT
-REDUCE
-NT(VP)
-SHIFT
-NT(VP)
-SHIFT
-NT(VP)
-SHIFT
-NT(NP)
-SHIFT
-REDUCE
-NT(PP-CLR)
-SHIFT
-NT(NP)
-SHIFT
-SHIFT
-SHIFT
-REDUCE
-REDUCE
-NT(NP-TMP)
-SHIFT
-SHIFT
-REDUCE
-SHIFT
-NT(PP)
-SHIFT
-NT(NP)
-NT(NP)
-SHIFT
-REDUCE
-NT(PP)
-SHIFT
-NT(NP)
-NT(NP)
-SHIFT
-REDUCE
-SHIFT
-NT(NP)
-SHIFT
-REDUCE
-SHIFT
-NT(NP)
-SHIFT
-REDUCE
-SHIFT
-NT(NP)
-SHIFT
-REDUCE
-REDUCE
-REDUCE
-REDUCE
-REDUCE
-REDUCE
-REDUCE
-REDUCE
-SHIFT
-REDUCE
+
 ```
 
 
