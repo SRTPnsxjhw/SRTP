@@ -109,11 +109,17 @@ Configuration options:
 ## P
 ./build/nt-parser/nt-parser -x -T data/train.oracle -d data/dev.oracle -C data/mytest.stem -m ntparse_pos_0_2_128_128_16_128-pid62654.params -P -p data/mytest.oracle --input_dim 128 --lstm_input_dim 128 --hidden_dim 128 D 0.2 > data/output.txt
 
+build/nt-parser/nt-parser --cnn-mem 1700 -x -T [training_oracle_file] -p [test_oracle_file] -C [original_test_file (PTB bracketed format, see sample_input_english.txt)] -P --pretrained_dim [dimension of pre-trained word embedding] -w [pre-trained word embedding] --lstm_input_dim 128 --hidden_dim 128 -m [parameter file] > output.txt
+
+
 ## not_P
 ./build/nt-parser/nt-parser -x -T data/train.oracle -d data/dev.oracle -C data/mytest.stem -m ntparse_0_2_128_128_16_128-pid2177.params  -p data/mytest.oracle --input_dim 128 --lstm_input_dim 128 --hidden_dim 128 D 0.2 > data/output_nop.txt
 
 ## Test input 
 ```
+0 ||| -3.68213 ||| (S (NP-SBJ-1 (NP (XX The) (XX economy) (XX 's)) (XX temperature)) (VP (XX will) (VP (XX be) (VP (XX taken) (NP (XX *-1)) (PP-CLR (XX from) (NP (XX several) (XX UNK-LC) (XX points))) (NP-TMP (NP (XX this) (XX week)) (XX ,) (PP (XX with) (NP (NP (XX readings)) (PP (XX on) (NP (XX trade) (XX ,) (XX output) (XX ,) (XX housing) (XX and) (XX inflation))))))))) (XX .))
+0 ||| -0.522691 ||| (S (NP-SBJ-1 (NP (XX The) (XX economy) (XX 's)) (XX temperature)) (VP (XX will) (VP (XX be) (VP (XX taken) (NP (XX *-1)) (PP-CLR (XX from) (NP (XX several) (XX UNK-LC) (XX points))) (NP-TMP (XX this) (XX week)) (XX ,) (PP (XX with) (NP (NP (XX readings)) (PP (XX on) (NP (XX trade) (XX ,) (XX output) (XX ,) (XX housing) (XX and) (XX inflation)))))))) (XX .))
+
 # (S (NP-SBJ-1 (NP (DT The) (NN economy) (POS 's) ) (NN temperature) ) (VP (MD will) (VP (VB be) (VP (VBN taken) (NP (-NONE- *-1) ) (PP-CLR (IN from) (NP (JJ several) (NN vantage) (NNS points) )) (NP-TMP (DT this) (NN week) ) (, ,) (PP (IN with) (NP (NP (NNS readings) ) (PP (IN on) (NP (NP (NN trade) ) (, ,) (NP (NN output) ) (, ,) (NP (NN housing) ) (CC and) (NP (NN inflation) )))))))) (. .) )
 DT NN POS NN MD VB VBN -NONE- IN JJ NN NNS DT NN , IN NNS IN NN , NN , NN CC NN .
 The economy 's temperature will be taken *-1 from several vantage points this week , with readings on trade , output , housing and inflation .
@@ -184,6 +190,63 @@ REDUCE
 SHIFT
 REDUCE
 ```
+
+
+# (S (NP-SBJ (NN Housing) (NNS starts) ) (VP (VBP are) (VP (VBN expected) (S (NP-SBJ (-NONE- *) ) (VP (TO to) (VP (VB quicken) (NP (DT a) (NN bit) ) (PP (IN from) (NP (NP (NP (NNP August) (POS 's) ) (JJ annual) (NN pace) ) (PP (IN of) (NP (CD 1,350,000) (NNS units) ))))))))) (. .) )
+NN NNS VBP VBN -NONE- TO VB DT NN IN NNP POS JJ NN IN CD NNS .
+Housing starts are expected * to quicken a bit from August 's annual pace of 1,350,000 units .
+housing starts are expected * to quicken a bit from august 's annual pace of 1,350,000 units .
+Housing starts are expected * to UNK-LC a bit from August 's annual pace of UNK-NUM units .
+NT(S)
+NT(NP-SBJ)
+SHIFT
+SHIFT
+REDUCE
+NT(VP)
+SHIFT
+NT(VP)
+SHIFT
+NT(S)
+NT(NP-SBJ)
+SHIFT
+REDUCE
+NT(VP)
+SHIFT
+NT(VP)
+SHIFT
+NT(NP)
+SHIFT
+SHIFT
+REDUCE
+NT(PP)
+SHIFT
+NT(NP)
+NT(NP)
+NT(NP)
+SHIFT
+SHIFT
+REDUCE
+SHIFT
+SHIFT
+REDUCE
+NT(PP)
+SHIFT
+NT(NP)
+SHIFT
+SHIFT
+REDUCE
+REDUCE
+REDUCE
+REDUCE
+REDUCE
+REDUCE
+REDUCE
+REDUCE
+REDUCE
+SHIFT
+REDUCE
+
+
 # Train Gen
 ./build/nt-parser/nt-parser-gen -x -T data/train_gen.oracle -d data/dev_gen.oracle -c data/word_clusters.txt -t --input_dim 256 --lstm_input_dim 256 --hidden_dim 256 -D 0.3
 
