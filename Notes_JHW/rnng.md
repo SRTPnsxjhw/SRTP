@@ -117,72 +117,32 @@ build/nt-parser/nt-parser --cnn-mem 1700 -x -T [training_oracle_file] -p [test_o
 
 ## Test input 
 ```
-0 ||| -3.68213 ||| (S (NP-SBJ-1 (NP (XX The) (XX economy) (XX 's)) (XX temperature)) (VP (XX will) (VP (XX be) (VP (XX taken) (NP (XX *-1)) (PP-CLR (XX from) (NP (XX several) (XX UNK-LC) (XX points))) (NP-TMP (NP (XX this) (XX week)) (XX ,) (PP (XX with) (NP (NP (XX readings)) (PP (XX on) (NP (XX trade) (XX ,) (XX output) (XX ,) (XX housing) (XX and) (XX inflation))))))))) (XX .))
-0 ||| -0.522691||| (S (NP-SBJ-1 (NP (XX The) (XX economy) (XX 's)) (XX temperature)) (VP (XX will) (VP (XX be) (VP (XX taken) (NP (XX *-1)) (PP-CLR (XX from) (NP (XX several) (XX UNK-LC) (XX points))) (NP-TMP (XX this) (XX week)) (XX ,) (PP (XX with) (NP (NP (XX readings)) (PP (XX on) (NP (XX trade) (XX ,) (XX output) (XX ,) (XX housing) (XX and) (XX inflation)))))))) (XX .))
+0 ||| -0.17312 ||| (S (ADVP (XX No)) (XX ,) (NP-SBJ (XX it)) (VP (XX was) (XX n't) (NP-PRD (XX Black) (XX Monday))) (XX .))
 
-# (S (NP-SBJ-1 (NP (DT The) (NN economy) (POS 's) ) (NN temperature) ) (VP (MD will) (VP (VB be) (VP (VBN taken) (NP (-NONE- *-1) ) (PP-CLR (IN from) (NP (JJ several) (NN vantage) (NNS points) )) (NP-TMP (DT this) (NN week) ) (, ,) (PP (IN with) (NP (NP (NNS readings) ) (PP (IN on) (NP (NP (NN trade) ) (, ,) (NP (NN output) ) (, ,) (NP (NN housing) ) (CC and) (NP (NN inflation) )))))))) (. .) )
-DT NN POS NN MD VB VBN -NONE- IN JJ NN NNS DT NN , IN NNS IN NN , NN , NN CC NN .
-The economy 's temperature will be taken *-1 from several vantage points this week , with readings on trade , output , housing and inflation .
-the economy 's temperature will be taken *-1 from several vantage points this week , with readings on trade , output , housing and inflation .
-The economy 's temperature will be taken *-1 from several UNK-LC points this week , with readings on trade , output , housing and inflation .
-
+# (S (INTJ (RB No) ) (, ,) (NP-SBJ (PRP it) ) (VP (VBD was) (RB n't) (NP-PRD (NNP Black) (NNP Monday) )) (. .) )
+RB , PRP VBD RB NNP NNP .
+No , it was n't Black Monday .
+no , it was n't black monday .
+No , it was n't Black Monday .
+NT(S)
+NT(INTJ)
+SHIFT
+REDUCE
+SHIFT
+NT(NP-SBJ)
+SHIFT
+REDUCE
+NT(VP)
+SHIFT
+SHIFT
+NT(NP-PRD)
+SHIFT
+SHIFT
+REDUCE
+REDUCE
+SHIFT
+REDUCE
 ```
-
-
-# (S (NP-SBJ (NN Housing) (NNS starts) ) (VP (VBP are) (VP (VBN expected) (S (NP-SBJ (-NONE- *) ) (VP (TO to) (VP (VB quicken) (NP (DT a) (NN bit) ) (PP (IN from) (NP (NP (NP (NNP August) (POS 's) ) (JJ annual) (NN pace) ) (PP (IN of) (NP (CD 1,350,000) (NNS units) ))))))))) (. .) )
-NN NNS VBP VBN -NONE- TO VB DT NN IN NNP POS JJ NN IN CD NNS .
-Housing starts are expected * to quicken a bit from August 's annual pace of 1,350,000 units .
-housing starts are expected * to quicken a bit from august 's annual pace of 1,350,000 units .
-Housing starts are expected * to UNK-LC a bit from August 's annual pace of UNK-NUM units .
-NT(S)
-NT(NP-SBJ)
-SHIFT
-SHIFT
-REDUCE
-NT(VP)
-SHIFT
-NT(VP)
-SHIFT
-NT(S)
-NT(NP-SBJ)
-SHIFT
-REDUCE
-NT(VP)
-SHIFT
-NT(VP)
-SHIFT
-NT(NP)
-SHIFT
-SHIFT
-REDUCE
-NT(PP)
-SHIFT
-NT(NP)
-NT(NP)
-NT(NP)
-SHIFT
-SHIFT
-REDUCE
-SHIFT
-SHIFT
-REDUCE
-NT(PP)
-SHIFT
-NT(NP)
-SHIFT
-SHIFT
-REDUCE
-REDUCE
-REDUCE
-REDUCE
-REDUCE
-REDUCE
-REDUCE
-REDUCE
-REDUCE
-SHIFT
-REDUCE
-
 
 # Train Gen
 ./build/nt-parser/nt-parser-gen -x -T data/train_gen.oracle -d data/dev_gen.oracle -c data/word_clusters.txt -t --input_dim 256 --lstm_input_dim 256 --hidden_dim 256 -D 0.3
